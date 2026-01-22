@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/Pagination.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1766939150431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1766939150430,
+            "name": "Commit-0",
+            "content": "export default function Pagination({ page, totalPages, onPage }) {\n  if (!totalPages || totalPages <= 1) return null;\n\n  const items = [];\n  const maxButtons = 7;\n\n  let start = Math.max(1, page - 2);\n  let end = Math.min(totalPages, start + maxButtons - 1);\n  start = Math.max(1, end - maxButtons + 1);\n\n  for (let p = start; p <= end; p++) items.push(p);\n\n  return (\n    <nav className=\"d-flex justify-content-end\">\n      <ul className=\"pagination pagination-sm mb-0\">\n        <li className={`page-item ${page <= 1 ? \"disabled\" : \"\"}`}>\n          <button className=\"page-link\" onClick={() => onPage(page - 1)}>\n            Prev\n          </button>\n        </li>\n\n        {start > 1 && (\n          <>\n            <li className=\"page-item\">\n              <button className=\"page-link\" onClick={() => onPage(1)}>1</button>\n            </li>\n            {start > 2 && <li className=\"page-item disabled\"><span className=\"page-link\">…</span></li>}\n          </>\n        )}\n\n        {items.map((p) => (\n          <li key={p} className={`page-item ${p === page ? \"active\" : \"\"}`}>\n            <button className=\"page-link\" onClick={() => onPage(p)}>\n              {p}\n            </button>\n          </li>\n        ))}\n\n        {end < totalPages && (\n          <>\n            {end < totalPages - 1 && <li className=\"page-item disabled\"><span className=\"page-link\">…</span></li>}\n            <li className=\"page-item\">\n              <button className=\"page-link\" onClick={() => onPage(totalPages)}>\n                {totalPages}\n              </button>\n            </li>\n          </>\n        )}\n\n        <li className={`page-item ${page >= totalPages ? \"disabled\" : \"\"}`}>\n          <button className=\"page-link\" onClick={() => onPage(page + 1)}>\n            Next\n          </button>\n        </li>\n      </ul>\n    </nav>\n  );\n}\n"
+        }
+    ]
+}

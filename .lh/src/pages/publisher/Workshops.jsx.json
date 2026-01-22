@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/publisher/Workshops.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1767958374154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1767958374154,
+            "name": "Commit-0",
+            "content": "import ListingManager from \"./ListingManager\";\n\nexport default function Services() {\n  return (\n    <ListingManager\n      typeKey=\"services\"\n      title=\"Services\"\n      subtitle=\"Service listings (yearly plan item) — mock for now\"\n      addButtonText=\"Add Service\"\n      searchKeys={[\"title\", \"category\"]}\n      fields={[\n        { name: \"title\", label: \"Service Title\", required: true, col: \"col-md-6\" },\n        { name: \"category\", label: \"Category\", col: \"col-md-6\", placeholder: \"Tech / Civil / Automotive...\" },\n        { name: \"yearlyFee\", label: \"Yearly Fee\", col: \"col-md-6\", placeholder: \"e.g. ₹9,999\", type: \"text\" },\n        { name: \"location\", label: \"Location\", col: \"col-md-6\" },\n        { name: \"description\", label: \"Details\", type: \"textarea\", required: true, col: \"col-12\" },\n      ]}\n      sampleData={[\n        { _id: \"s1\", title: \"Startup Legal Support\", category: \"Legal\", yearlyFee: \"₹9,999\", location: \"India\", status: \"approved\", createdAt: new Date().toISOString() },\n        { _id: \"s2\", title: \"Pitch Deck Design\", category: \"Design\", yearlyFee: \"₹5,999\", location: \"Online\", status: \"pending\", createdAt: new Date().toISOString() },\n      ]}\n    />\n  );\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/layout/MainLayout.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1766862748810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766863709786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,19 @@\n import Sidebar from \"../components/Sidebar\";\n import Topbar from \"../components/Topbar\";\n+import { Outlet } from \"react-router-dom\";\n \n-export default function MainLayout({ children }) {\n+export default function MainLayout() {\n   return (\n-    <div className=\"d-flex\">\n+    <div className=\"d-flex\" style={{ minHeight: \"100vh\", width: \"100%\" }}>\n       <Sidebar />\n \n-      <div className=\"flex-grow-1\">\n+      <div className=\"flex-grow-1 bg-light\">\n         <Topbar />\n-        <div className=\"p-4\">{children}</div>\n+\n+        <div className=\"p-4\">\n+          <Outlet />  \n+        </div>\n       </div>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1766921962171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,16 +3,20 @@\n import { Outlet } from \"react-router-dom\";\n \n export default function MainLayout() {\n   return (\n-    <div className=\"d-flex\" style={{ minHeight: \"100vh\", width: \"100%\" }}>\n-      <Sidebar />\n+    <div className=\"d-flex\" style={{ minHeight: \"100vh\", width: \"100vw\", overflowX: \"hidden\" }}>\n+      {/* Sidebar */}\n+      <div style={{ width: \"260px\", flexShrink: 0 }}>\n+        <Sidebar />\n+      </div>\n \n-      <div className=\"flex-grow-1 bg-light\">\n+      {/* Main Content */}\n+      <div className=\"flex-grow-1 d-flex flex-column bg-light\" style={{ width: \"100%\" }}>\n         <Topbar />\n \n-        <div className=\"p-4\">\n-          <Outlet />  \n+        <div className=\"p-4\" style={{ width: \"100%\", flexGrow: 1 }}>\n+          <Outlet />\n         </div>\n       </div>\n     </div>\n   );\n"
+                }
+            ],
+            "date": 1766862748810,
+            "name": "Commit-0",
+            "content": "import Sidebar from \"../components/Sidebar\";\nimport Topbar from \"../components/Topbar\";\n\nexport default function MainLayout({ children }) {\n  return (\n    <div className=\"d-flex\">\n      <Sidebar />\n\n      <div className=\"flex-grow-1\">\n        <Topbar />\n        <div className=\"p-4\">{children}</div>\n      </div>\n    </div>\n  );\n}\n"
+        }
+    ]
+}

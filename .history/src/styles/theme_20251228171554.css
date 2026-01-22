@@ -1,0 +1,107 @@
+/* ===== Ventic UI Global Styles ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f6f9; /* Light gray clean background */
+  font-family: "Inter", sans-serif;
+}
+
+/* Remove bootstrap container limits */
+.container {
+  max-width: 100% !important;
+}
+
+/* Utility classes */
+.text-gray {
+  color: #6c757d;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  color: #212529;
+}
+
+/* Card Shadows */
+.card-v {
+  border: none !important;
+  border-radius: 12px !important;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+
+.card-v:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ===== Sidebar Ventic Style ===== */
+
+.sidebar-container {
+  width: 260px;
+  min-height: 100vh;
+  background: #ffffff;
+  padding-top: 20px;
+  border-right: 1px solid #e9ecef;
+}
+
+.sidebar-header {
+  font-size: 22px;
+  font-weight: 700;
+  padding: 0 22px;
+  margin-bottom: 20px;
+}
+
+.sidebar-menu li {
+  margin-bottom: 6px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 22px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.sidebar-link:hover {
+  background: #f1f3f5;
+  color: #000;
+}
+
+.sidebar-link.active {
+  background: #e7f1ff;
+  color: #0d6efd !important;
+  font-weight: 600;
+}
+
+
+/* ===== Topbar Ventic Style ===== */
+
+.topbar {
+  height: 70px;
+  background: #fff;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-wrapper {
+  cursor: pointer;
+}
+
+.notif-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  font-size: 12px;
+}

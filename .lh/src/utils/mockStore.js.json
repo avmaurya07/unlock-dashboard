@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/utils/mockStore.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1767958163512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1767958163512,
+            "name": "Commit-0",
+            "content": "const keyOf = (type) => `unlock_mock_${type}`;\n\nexport function loadMock(type, fallback = []) {\n  try {\n    const raw = localStorage.getItem(keyOf(type));\n    return raw ? JSON.parse(raw) : fallback;\n  } catch {\n    return fallback;\n  }\n}\n\nexport function saveMock(type, items) {\n  localStorage.setItem(keyOf(type), JSON.stringify(items));\n}\n\nexport function uid() {\n  return `${Date.now()}_${Math.random().toString(16).slice(2)}`;\n}\n"
+        }
+    ]
+}

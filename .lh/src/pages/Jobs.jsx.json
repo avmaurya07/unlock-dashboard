@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/pages/Jobs.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1766863130587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766863382068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function PageName() {\n+export default function jo() {\n   return (\n     <MainLayout>\n-      <h2>PageName</h2>\n+      <h2>Jobs</h2>\n     </MainLayout>\n   );\n }\n"
+                },
+                {
+                    "date": 1766863388493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function jo() {\n+export default function obs() {\n   return (\n     <MainLayout>\n       <h2>Jobs</h2>\n     </MainLayout>\n"
+                },
+                {
+                    "date": 1766921764733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function obs() {\n+export default function Jobs() {\n   return (\n-    <MainLayout>\n-      <h2>Jobs</h2>\n-    </MainLayout>\n+    <div>\n+      <h2 className=\"fw-bold\">Events</h2>\n+      <p>Events listing will appear here.</p>\n+    </div>\n   );\n }\n"
+                }
+            ],
+            "date": 1766863130587,
+            "name": "Commit-0",
+            "content": "import MainLayout from \"../layout/MainLayout\";\n\nexport default function PageName() {\n  return (\n    <MainLayout>\n      <h2>PageName</h2>\n    </MainLayout>\n  );\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/pages/Dashboard.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1766862772817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766921871052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import MainLayout from \"../layout/MainLayout\";\n \n export default function Dashboard() {\n   return (\n-    <MainLayout>\n+    <div>\n       <h3 className=\"fw-bold mb-4\">Dashboard</h3>\n \n       <div className=\"row g-4\">\n         <div className=\"col-md-3\">\n@@ -22,7 +22,7 @@\n         <div className=\"col-md-3\">\n           <DashboardCard title=\"Investor Programs\" count=\"3\" color=\"#3498db\" />\n         </div>\n       </div>\n-    </MainLayout>\n+    </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1766922000747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,27 +2,32 @@\n import MainLayout from \"../layout/MainLayout\";\n \n export default function Dashboard() {\n   return (\n-    <div>\n-      <h3 className=\"fw-bold mb-4\">Dashboard</h3>\n+    <div style={{ width: \"100%\" }}>\n+      <h2 className=\"fw-bold mb-4\">Dashboard</h2>\n \n-      <div className=\"row g-4\">\n-        <div className=\"col-md-3\">\n-          <DashboardCard title=\"Events\" count=\"12\" color=\"#1abc9c\" />\n+      <div className=\"d-flex gap-4 flex-wrap\">\n+        <div className=\"card p-3 shadow-sm\" style={{ width: \"250px\" }}>\n+          <h6>Events</h6>\n+          <h2 className=\"text-success\">12</h2>\n         </div>\n \n-        <div className=\"col-md-3\">\n-          <DashboardCard title=\"Jobs\" count=\"5\" color=\"#e74c3c\" />\n+        <div className=\"card p-3 shadow-sm\" style={{ width: \"250px\" }}>\n+          <h6>Jobs</h6>\n+          <h2 className=\"text-danger\">5</h2>\n         </div>\n \n-        <div className=\"col-md-3\">\n-          <DashboardCard title=\"Startup Funding Calls\" count=\"7\" color=\"#9b59b6\" />\n+        <div className=\"card p-3 shadow-sm\" style={{ width: \"250px\" }}>\n+          <h6>Startup Funding Calls</h6>\n+          <h2 className=\"text-purple\">7</h2>\n         </div>\n \n-        <div className=\"col-md-3\">\n-          <DashboardCard title=\"Investor Programs\" count=\"3\" color=\"#3498db\" />\n+        <div className=\"card p-3 shadow-sm\" style={{ width: \"250px\" }}>\n+          <h6>Investor Programs</h6>\n+          <h2 className=\"text-primary\">3</h2>\n         </div>\n       </div>\n     </div>\n   );\n }\n+\n"
+                },
+                {
+                    "date": 1766922377521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,33 +1,16 @@\n import DashboardCard from \"../components/DashboardCard\";\n-import MainLayout from \"../layout/MainLayout\";\n \n export default function Dashboard() {\n   return (\n     <div style={{ width: \"100%\" }}>\n       <h2 className=\"fw-bold mb-4\">Dashboard</h2>\n \n       <div className=\"d-flex gap-4 flex-wrap\">\n-        <div className=\"card p-3 shadow-sm\" style={{ width: \"250px\" }}>\n-          <h6>Events</h6>\n-          <h2 className=\"text-success\">12</h2>\n-        </div>\n-\n-        <div className=\"card p-3 shadow-sm\" style={{ width: \"250px\" }}>\n-          <h6>Jobs</h6>\n-          <h2 className=\"text-danger\">5</h2>\n-        </div>\n-\n-        <div className=\"card p-3 shadow-sm\" style={{ width: \"250px\" }}>\n-          <h6>Startup Funding Calls</h6>\n-          <h2 className=\"text-purple\">7</h2>\n-        </div>\n-\n-        <div className=\"card p-3 shadow-sm\" style={{ width: \"250px\" }}>\n-          <h6>Investor Programs</h6>\n-          <h2 className=\"text-primary\">3</h2>\n-        </div>\n+        <DashboardCard title=\"Events\" count={12} color=\"#1abc9c\" />\n+        <DashboardCard title=\"Jobs\" count={5} color=\"#e74c3c\" />\n+        <DashboardCard title=\"Startup Funding Calls\" count={7} color=\"#9b59b6\" />\n+        <DashboardCard title=\"Investor Programs\" count={3} color=\"#3498db\" />\n       </div>\n     </div>\n   );\n }\n-\n"
+                }
+            ],
+            "date": 1766862772817,
+            "name": "Commit-0",
+            "content": "import DashboardCard from \"../components/DashboardCard\";\nimport MainLayout from \"../layout/MainLayout\";\n\nexport default function Dashboard() {\n  return (\n    <MainLayout>\n      <h3 className=\"fw-bold mb-4\">Dashboard</h3>\n\n      <div className=\"row g-4\">\n        <div className=\"col-md-3\">\n          <DashboardCard title=\"Events\" count=\"12\" color=\"#1abc9c\" />\n        </div>\n\n        <div className=\"col-md-3\">\n          <DashboardCard title=\"Jobs\" count=\"5\" color=\"#e74c3c\" />\n        </div>\n\n        <div className=\"col-md-3\">\n          <DashboardCard title=\"Startup Funding Calls\" count=\"7\" color=\"#9b59b6\" />\n        </div>\n\n        <div className=\"col-md-3\">\n          <DashboardCard title=\"Investor Programs\" count=\"3\" color=\"#3498db\" />\n        </div>\n      </div>\n    </MainLayout>\n  );\n}\n"
+        }
+    ]
+}

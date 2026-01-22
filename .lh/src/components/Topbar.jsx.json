@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/Topbar.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1766862741819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766922337107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,32 +1,27 @@\n export default function Topbar() {\n   return (\n-    <nav className=\"navbar navbar-light bg-white shadow-sm px-4 d-flex justify-content-between\">\n+    <nav className=\"topbar shadow-sm\">\n       <div></div>\n \n       <div className=\"d-flex align-items-center gap-4\">\n \n-        <i className=\"bi bi-bell fs-4 position-relative\">\n-          <span className=\"position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger\">\n-            3\n-          </span>\n-        </i>\n+        <div className=\"notification-wrapper position-relative\">\n+          <i className=\"bi bi-bell fs-4\"></i>\n+          <span className=\"badge bg-danger rounded-pill notif-badge\">3</span>\n+        </div>\n \n         <div className=\"dropdown\">\n-          <button className=\"btn btn-light dropdown-toggle\" data-bs-toggle=\"dropdown\">\n-            <img\n-              src=\"https://i.pravatar.cc/40\"\n-              className=\"rounded-circle me-2\"\n-              alt=\"profile\"\n-            />\n-            Profile\n+          <button className=\"btn btn-light d-flex align-items-center gap-2 dropdown-toggle\" data-bs-toggle=\"dropdown\">\n+            <img src=\"https://i.pravatar.cc/40\" className=\"rounded-circle\" />\n+            <span className=\"fw-semibold\">Profile</span>\n           </button>\n+\n           <ul className=\"dropdown-menu dropdown-menu-end\">\n             <li><button className=\"dropdown-item\">Settings</button></li>\n             <li><button className=\"dropdown-item\">Logout</button></li>\n           </ul>\n         </div>\n-\n       </div>\n     </nav>\n   );\n }\n"
+                }
+            ],
+            "date": 1766862741819,
+            "name": "Commit-0",
+            "content": "export default function Topbar() {\n  return (\n    <nav className=\"navbar navbar-light bg-white shadow-sm px-4 d-flex justify-content-between\">\n      <div></div>\n\n      <div className=\"d-flex align-items-center gap-4\">\n\n        <i className=\"bi bi-bell fs-4 position-relative\">\n          <span className=\"position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger\">\n            3\n          </span>\n        </i>\n\n        <div className=\"dropdown\">\n          <button className=\"btn btn-light dropdown-toggle\" data-bs-toggle=\"dropdown\">\n            <img\n              src=\"https://i.pravatar.cc/40\"\n              className=\"rounded-circle me-2\"\n              alt=\"profile\"\n            />\n            Profile\n          </button>\n          <ul className=\"dropdown-menu dropdown-menu-end\">\n            <li><button className=\"dropdown-item\">Settings</button></li>\n            <li><button className=\"dropdown-item\">Logout</button></li>\n          </ul>\n        </div>\n\n      </div>\n    </nav>\n  );\n}\n"
+        }
+    ]
+}

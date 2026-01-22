@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/api/adminUsers.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1766941051575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1766941051575,
+            "name": "Commit-0",
+            "content": "import api from \"./client\";\n\n// GET /api/admin/users?q=&role=&status=&page=&limit=\nexport const getAdminUsers = (params) =>\n  api.get(\"/api/admin/users\", { params });\n\n// PATCH /api/admin/users/:id/block  body: { blocked: true/false }\nexport const setUserBlocked = (userId, blocked) =>\n  api.patch(`/api/admin/users/${userId}/block`, { blocked });\n"
+        }
+    ]
+}

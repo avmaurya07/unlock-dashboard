@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/api/adminSubscriptions.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1766941342737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1766941342736,
+            "name": "Commit-0",
+            "content": "import api from \"./client\";\n\n// GET current pricing config\n// Expected: { config: { plans: {3: 999, 6: 1799, 9: 2499}, serviceListingYearlyFee: 499, currency: \"INR\" } }\nexport const getSubscriptionConfig = () =>\n  api.get(\"/api/admin/subscriptions/config\");\n\n// UPDATE pricing config\n// Body: { plans: {3: 999, 6: 1799, 9: 2499}, serviceListingYearlyFee: 499, currency: \"INR\" }\nexport const updateSubscriptionConfig = (payload) =>\n  api.put(\"/api/admin/subscriptions/config\", payload);\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/api/adminListings.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1766939117881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1766939117881,
+            "name": "Commit-0",
+            "content": "import api from \"./client\";\n\nexport const getAdminListings = (params) =>\n  api.get(\"/api/admin/listings\", { params });\n\nexport const getAdminListingById = (id) =>\n  api.get(`/api/admin/listings/${id}`);\n\nexport const approveAdminListing = (id) =>\n  api.patch(`/api/admin/listings/${id}/approve`);\n\nexport const rejectAdminListing = (id, reason) =>\n  api.patch(`/api/admin/listings/${id}/reject`, { reason });\n"
+        }
+    ]
+}

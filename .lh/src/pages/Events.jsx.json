@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/pages/Events.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1766863098740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766863104812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n \n export default function PageName() {\n   return (\n     <MainLayout>\n-      <h2>PageName</h2>\n+      <h2>Event</h2>\n     </MainLayout>\n   );\n }\n"
+                },
+                {
+                    "date": 1766863353026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function PageName() {\n+export default function     () {\n   return (\n     <MainLayout>\n       <h2>Event</h2>\n     </MainLayout>\n"
+                },
+                {
+                    "date": 1766863359248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function     () {\n+export default function  Inv() {\n   return (\n     <MainLayout>\n       <h2>Event</h2>\n     </MainLayout>\n"
+                },
+                {
+                    "date": 1766863365645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function  () {\n+export default function Events() {\n   return (\n     <MainLayout>\n       <h2>Event</h2>\n     </MainLayout>\n"
+                },
+                {
+                    "date": 1766921758801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+import MainLayout from \"../layout/MainLayout\";\n+\n+export default function Events() {\n+  return (\n+    <div>\n+      <h2 className=\"fw-bold\">Events</h2>\n+      <p>Events listing will appear here.</p>\n+    </div>\n+  );\n+}\n"
+                }
+            ],
+            "date": 1766863098739,
+            "name": "Commit-0",
+            "content": "import MainLayout from \"../layout/MainLayout\";\n\nexport default function PageName() {\n  return (\n    <MainLayout>\n      <h2>PageName</h2>\n    </MainLayout>\n  );\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/pages/Competitions.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1766863063794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766921798654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import MainLayout from \"../layout/MainLayout\";\n \n export default function Competitions() {\n   return (\n-    <MainLayout>\n-      <h2 className=\"fw-bold\">Competitions</h2>\n-      <p>This is the Competitions page.</p>\n-    </MainLayout>\n+    <div>\n+      <h2 className=\"fw-bold\">Events</h2>\n+      <p>Events listing will appear here.</p>\n+    </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1766921807093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export default function Competitions() {\n   return (\n     <div>\n-      <h2 className=\"fw-bold\">Compe</h2>\n+      <h2 className=\"fw-bold\">Competitions</h2>\n       <p>Events listing will appear here.</p>\n     </div>\n   );\n }\n"
+                }
+            ],
+            "date": 1766863063794,
+            "name": "Commit-0",
+            "content": "import MainLayout from \"../layout/MainLayout\";\n\nexport default function Competitions() {\n  return (\n    <MainLayout>\n      <h2 className=\"fw-bold\">Competitions</h2>\n      <p>This is the Competitions page.</p>\n    </MainLayout>\n  );\n}\n"
+        }
+    ]
+}

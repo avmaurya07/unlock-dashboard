@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/components/AdminSidebar.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1766938708218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766939445903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,36 @@\n-AdminSidebar.jsx\n\\ No newline at end of file\n+import { NavLink } from \"react-router-dom\";\n+\n+const menu = [\n+  { label: \"Dashboard\", icon: \"bi-grid\", to: \"/admin/dashboard/admin\" },\n+  { label: \"Pending Listings\", icon: \"bi-hourglass-split\", to: \"/admin/listings/pending\" },\n+  { label: \"All Listings\", icon: \"bi-card-list\", to: \"/admin/listings\" },\n+  { label: \"Publishers\", icon: \"bi-buildings\", to: \"/admin/publishers\" },\n+  { label: \"Users\", icon: \"bi-people\", to: \"/admin/users\" },\n+  { label: \"Subscriptions\", icon: \"bi-credit-card\", to: \"/admin/subscriptions\" },\n+];\n+\n+export default function AdminSidebar({ collapsed }) {\n+  return (\n+    <div className={`ventic-sidebar ${collapsed ? \"collapsed\" : \"\"}`}>\n+      <div className=\"ventic-sidebar__brand\">\n+        <div className=\"ventic-logo\">U</div>\n+        {!collapsed && <div className=\"ventic-brand-text\">Unlock</div>}\n+      </div>\n+\n+      <div className=\"ventic-sidebar__menu\">\n+        {menu.map((item) => (\n+          <NavLink\n+            key={item.to}\n+            to={item.to}\n+            className={({ isActive }) =>\n+              `ventic-nav ${isActive ? \"active\" : \"\"}`\n+            }\n+          >\n+            <i className={`bi ${item.icon} ventic-nav__icon`} />\n+            {!collapsed && <span className=\"ventic-nav__text\">{item.label}</span>}\n+          </NavLink>\n+        ))}\n+      </div>\n+    </div>\n+  );\n+}\n"
+                },
+                {
+                    "date": 1766939461003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { NavLink } from \"react-router-dom\";\n \n const menu = [\n-  { label: \"Dashboard\", icon: \"bi-grid\", to: \"/admin/dashboard/admin\" },\n+  { label: \"Dashboard\", icon: \"bi-grid\", to: \"/admin\" },\n   { label: \"Pending Listings\", icon: \"bi-hourglass-split\", to: \"/admin/listings/pending\" },\n   { label: \"All Listings\", icon: \"bi-card-list\", to: \"/admin/listings\" },\n   { label: \"Publishers\", icon: \"bi-buildings\", to: \"/admin/publishers\" },\n   { label: \"Users\", icon: \"bi-people\", to: \"/admin/users\" },\n"
+                },
+                {
+                    "date": 1766939470029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { NavLink } from \"react-router-dom\";\n \n const menu = [\n-  { label: \"Dashboard\", icon: \"bi-grid\", to: \"/admin\" },\n+  { label: \"Dashboard\", icon: \"bi-grid\", to: \"/admin/dashboard\" },\n   { label: \"Pending Listings\", icon: \"bi-hourglass-split\", to: \"/admin/listings/pending\" },\n   { label: \"All Listings\", icon: \"bi-card-list\", to: \"/admin/listings\" },\n   { label: \"Publishers\", icon: \"bi-buildings\", to: \"/admin/publishers\" },\n   { label: \"Users\", icon: \"bi-people\", to: \"/admin/users\" },\n"
+                },
+                {
+                    "date": 1766949987414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+import { NavLink } from \"react-router-dom\";\n+\n+const menu = [\n+  { label: \"Dashboard\", icon: \"bi-grid\", to: \"/admin/dashboard\" },\n+  { label: \"Pending Listings\", icon: \"bi-hourglass-split\", to: \"/admin/listings/pending\" },\n+  { label: \"All Listings\", icon: \"bi-card-list\", to: \"/admin/listings\" },\n+  { label: \"Publishers\", icon: \"bi-buildings\", to: \"/admin/publishers\" },\n+  \n+  { label: \"Users\", icon: \"bi-people\", to: \"/admin/users\" },\n+  { label: \"Subscriptions\", icon: \"bi-credit-card\", to: \"/admin/subscriptions\" },\n+];\n+\n+export default function AdminSidebar({ collapsed }) {\n+  return (\n+    <div className={`ventic-sidebar ${collapsed ? \"collapsed\" : \"\"}`}>\n+      <div className=\"ventic-sidebar__brand\">\n+        <div className=\"ventic-logo\">U</div>\n+        {!collapsed && <div className=\"ventic-brand-text\">Unlock</div>}\n+      </div>\n+\n+      <div className=\"ventic-sidebar__menu\">\n+        {menu.map((item) => (\n+          <NavLink\n+            key={item.to}\n+            to={item.to}\n+            className={({ isActive }) =>\n+              `ventic-nav ${isActive ? \"active\" : \"\"}`\n+            }\n+          >\n+            <i className={`bi ${item.icon} ventic-nav__icon`} />\n+            {!collapsed && <span className=\"ventic-nav__text\">{item.label}</span>}\n+          </NavLink>\n+        ))}\n+      </div>\n+    </div>\n+  );\n+}\n"
+                }
+            ],
+            "date": 1766938708218,
+            "name": "Commit-0",
+            "content": "AdminSidebar.jsx"
+        }
+    ]
+}

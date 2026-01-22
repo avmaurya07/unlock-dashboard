@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/publisher/InvestorPrograms.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1767958348509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1767958348509,
+            "name": "Commit-0",
+            "content": "import ListingManager from \"./ListingManager\";\n\nexport default function InvestorPrograms() {\n  return (\n    <ListingManager\n      typeKey=\"investorPrograms\"\n      title=\"Investor Programs\"\n      subtitle=\"Programs you host or share (mock for now)\"\n      addButtonText=\"Add Investor Program\"\n      searchKeys={[\"title\", \"sectors\", \"location\"]}\n      fields={[\n        { name: \"title\", label: \"Program Title\", required: true, col: \"col-12\" },\n        { name: \"ticketSize\", label: \"Ticket Size\", col: \"col-md-6\", placeholder: \"e.g. $50k–$500k\" },\n        { name: \"sectors\", label: \"Preferred Sectors\", col: \"col-md-6\", placeholder: \"Fintech, SaaS, EV...\" },\n        { name: \"location\", label: \"Location\", col: \"col-md-6\" },\n        { name: \"deadline\", label: \"Deadline\", type: \"date\", col: \"col-md-6\" },\n        { name: \"description\", label: \"Details\", type: \"textarea\", required: true, col: \"col-12\" },\n      ]}\n      sampleData={[\n        { _id: \"ip1\", title: \"Angel Network Program\", ticketSize: \"$25k–$100k\", sectors: \"SaaS, D2C\", location: \"Delhi\", status: \"approved\", createdAt: new Date().toISOString() },\n        { _id: \"ip2\", title: \"VC Office Hours\", ticketSize: \"$100k–$1M\", sectors: \"AI, Fintech\", location: \"Online\", status: \"pending\", createdAt: new Date().toISOString() },\n      ]}\n    />\n  );\n}\n"
+        }
+    ]
+}

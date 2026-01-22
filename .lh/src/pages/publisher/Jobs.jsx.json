@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/publisher/Jobs.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1767958408187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1767958408187,
+            "name": "Commit-0",
+            "content": "import ListingManager from \"./ListingManager\";\n\nexport default function Jobs() {\n  return (\n    <ListingManager\n      typeKey=\"jobs\"\n      title=\"Jobs\"\n      subtitle=\"All your job postings (mock data for now)\"\n      addButtonText=\"Add New Job\"\n      searchKeys={[\"title\", \"company\", \"location\"]}\n      fields={[\n        { name: \"title\", label: \"Job Title\", required: true, col: \"col-md-6\" },\n        { name: \"company\", label: \"Company Name\", required: true, col: \"col-md-6\" },\n        { name: \"location\", label: \"Location\", col: \"col-md-6\" },\n        {\n          name: \"jobType\",\n          label: \"Job Type\",\n          type: \"select\",\n          col: \"col-md-6\",\n          options: [\n            { value: \"full-time\", label: \"Full-time\" },\n            { value: \"part-time\", label: \"Part-time\" },\n            { value: \"internship\", label: \"Internship\" },\n            { value: \"remote\", label: \"Remote\" },\n          ],\n        },\n        { name: \"salaryRange\", label: \"Salary Range\", col: \"col-md-6\", placeholder: \"e.g. 6–10 LPA\" },\n        { name: \"deadline\", label: \"Apply Deadline\", type: \"date\", col: \"col-md-6\" },\n        { name: \"description\", label: \"Job Description\", type: \"textarea\", required: true, col: \"col-12\" },\n      ]}\n      sampleData={[\n        { _id: \"j1\", title: \"React Developer\", company: \"TechNova\", location: \"Remote\", jobType: \"remote\", salaryRange: \"8–12 LPA\", status: \"approved\", createdAt: new Date().toISOString() },\n        { _id: \"j2\", title: \"Marketing Intern\", company: \"GrowthLab\", location: \"Mumbai\", jobType: \"internship\", status: \"pending\", createdAt: new Date().toISOString() },\n      ]}\n    />\n  );\n}\n"
+        }
+    ]
+}

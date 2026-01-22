@@ -1,0 +1,39 @@
+/* ===== Ventic UI Global Styles ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f6f9; /* Light gray clean background */
+  font-family: "Inter", sans-serif;
+}
+
+/* Remove bootstrap container limits */
+.container {
+  max-width: 100% !important;
+}
+
+/* Utility classes */
+.text-gray {
+  color: #6c757d;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  color: #212529;
+}
+
+/* Card Shadows */
+.card-v {
+  border: none !important;
+  border-radius: 12px !important;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+
+.card-v:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}

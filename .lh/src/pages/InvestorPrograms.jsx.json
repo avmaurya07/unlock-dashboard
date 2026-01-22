@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/pages/InvestorPrograms.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1766863120834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766863126313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n \n export default function PageName() {\n   return (\n     <MainLayout>\n-      <h2>PageName</h2>\n+      <h2>Investor </h2>\n     </MainLayout>\n   );\n }\n"
+                },
+                {
+                    "date": 1766863404674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function PageName() {\n+export default function in() {\n   return (\n     <MainLayout>\n-      <h2>Investor </h2>\n+      <h2>Investor Programs</h2>\n     </MainLayout>\n   );\n }\n"
+                },
+                {
+                    "date": 1766921785631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function in() {\n+export default function InvestorPrograms() {\n   return (\n-    <MainLayout>\n-      <h2>Investor Programs</h2>\n-    </MainLayout>\n+    <div>\n+      <h2 className=\"fw-bold\">Events</h2>\n+      <p>Events listing will appear here.</p>\n+    </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1766921792070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export default function InvestorPrograms() {\n   return (\n     <div>\n-      <h2 className=\"fw-bold\">Inv</h2>\n+      <h2 className=\"fw-bold\">Investor</h2>\n       <p>Events listing will appear here.</p>\n     </div>\n   );\n }\n"
+                }
+            ],
+            "date": 1766863120834,
+            "name": "Commit-0",
+            "content": "import MainLayout from \"../layout/MainLayout\";\n\nexport default function PageName() {\n  return (\n    <MainLayout>\n      <h2>PageName</h2>\n    </MainLayout>\n  );\n}\n"
+        }
+    ]
+}

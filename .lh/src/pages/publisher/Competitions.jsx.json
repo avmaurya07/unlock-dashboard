@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/publisher/Competitions.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1767958359960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1767958359960,
+            "name": "Commit-0",
+            "content": "import ListingManager from \"./ListingManager\";\n\nexport default function Competitions() {\n  return (\n    <ListingManager\n      typeKey=\"competitions\"\n      title=\"Competitions\"\n      subtitle=\"Competitions & challenges you list (mock for now)\"\n      addButtonText=\"Add Competition\"\n      searchKeys={[\"title\", \"mode\", \"prize\"]}\n      fields={[\n        { name: \"title\", label: \"Competition Title\", required: true, col: \"col-12\" },\n        {\n          name: \"mode\",\n          label: \"Mode\",\n          type: \"select\",\n          col: \"col-md-6\",\n          options: [\n            { value: \"online\", label: \"Online\" },\n            { value: \"offline\", label: \"Offline\" },\n            { value: \"hybrid\", label: \"Hybrid\" },\n          ],\n        },\n        { name: \"prize\", label: \"Prize\", col: \"col-md-6\", placeholder: \"e.g. ₹1,00,000\" },\n        { name: \"deadline\", label: \"Deadline\", type: \"date\", col: \"col-md-6\" },\n        { name: \"location\", label: \"Location\", col: \"col-md-6\" },\n        { name: \"description\", label: \"Details\", type: \"textarea\", required: true, col: \"col-12\" },\n      ]}\n      sampleData={[\n        { _id: \"c1\", title: \"Hackathon 2026\", mode: \"online\", prize: \"₹1,00,000\", status: \"approved\", createdAt: new Date().toISOString() },\n        { _id: \"c2\", title: \"Business Plan Challenge\", mode: \"hybrid\", prize: \"Mentorship + Funding\", status: \"pending\", createdAt: new Date().toISOString() },\n      ]}\n    />\n  );\n}\n"
+        }
+    ]
+}

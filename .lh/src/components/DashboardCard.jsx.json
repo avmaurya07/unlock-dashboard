@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/DashboardCard.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1766862755819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766922388343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n export default function DashboardCard({ title, count, color }) {\n   return (\n-    <div className=\"card shadow-sm p-3\">\n-      <h6 className=\"fw-bold\">{title}</h6>\n-      <h2 className=\"fw-bold\" style={{ color }}>{count}</h2>\n+    <div className=\"card-v\" style={{ width: \"250px\" }}>\n+      <h6 className=\"fw-bold mb-2\">{title}</h6>\n+      <h2 style={{ color, fontWeight: \"700\" }}>{count}</h2>\n     </div>\n   );\n }\n"
+                }
+            ],
+            "date": 1766862755819,
+            "name": "Commit-0",
+            "content": "export default function DashboardCard({ title, count, color }) {\n  return (\n    <div className=\"card shadow-sm p-3\">\n      <h6 className=\"fw-bold\">{title}</h6>\n      <h2 className=\"fw-bold\" style={{ color }}>{count}</h2>\n    </div>\n  );\n}\n"
+        }
+    ]
+}

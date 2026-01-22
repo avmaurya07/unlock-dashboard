@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/pages/publisher/FundingCalls.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1767958327214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1767958334210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,25 @@\n-FundingCalls.jsx\n\\ No newline at end of file\n+import ListingManager from \"./ListingManager\";\n+\n+export default function FundingCalls() {\n+  return (\n+    <ListingManager\n+      typeKey=\"funding\"\n+      title=\"Startup Funding Calls\"\n+      subtitle=\"Funding opportunities you post (mock for now)\"\n+      addButtonText=\"Add Funding Call\"\n+      searchKeys={[\"title\", \"stage\", \"location\"]}\n+      fields={[\n+        { name: \"title\", label: \"Funding Call Title\", required: true, col: \"col-12\" },\n+        { name: \"stage\", label: \"Startup Stage\", col: \"col-md-6\", placeholder: \"Pre-seed / Seed / Series A\" },\n+        { name: \"fundingAmount\", label: \"Funding Amount\", col: \"col-md-6\", placeholder: \"e.g. $50k–$200k\" },\n+        { name: \"location\", label: \"Location\", col: \"col-md-6\" },\n+        { name: \"deadline\", label: \"Deadline\", type: \"date\", col: \"col-md-6\" },\n+        { name: \"description\", label: \"Details\", type: \"textarea\", required: true, col: \"col-12\" },\n+      ]}\n+      sampleData={[\n+        { _id: \"f1\", title: \"Seed Funding – SaaS\", stage: \"Seed\", fundingAmount: \"$100k–$250k\", location: \"India\", status: \"approved\", createdAt: new Date().toISOString() },\n+        { _id: \"f2\", title: \"Pre-seed – AI Products\", stage: \"Pre-seed\", fundingAmount: \"$25k–$75k\", location: \"Online\", status: \"pending\", createdAt: new Date().toISOString() },\n+      ]}\n+    />\n+  );\n+}\n"
+                }
+            ],
+            "date": 1767958327214,
+            "name": "Commit-0",
+            "content": "FundingCalls.jsx"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/pages/FundingCalls.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1766863113516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766863118639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,9 @@\n+import MainLayout from \"../layout/MainLayout\";\n+\n+export default function PageName() {\n+  return (\n+    <MainLayout>\n+      <h2>Funding</h2>\n+    </MainLayout>\n+  );\n+}\n"
+                },
+                {
+                    "date": 1766863394036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,9 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function PageName() {\n+export default function f() {\n   return (\n     <MainLayout>\n       <h2>Funding</h2>\n     </MainLayout>\n   );\n }\n-import MainLayout from \"../layout/MainLayout\";\n-\n-export default function PageName() {\n-  return (\n-    <MainLayout>\n-      <h2>PageName</h2>\n-    </MainLayout>\n-  );\n-}\n"
+                },
+                {
+                    "date": 1766863399405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import MainLayout from \"../layout/MainLayout\";\n \n-export default function f() {\n+export default function FundingCalls() {\n   return (\n     <MainLayout>\n       <h2>Funding</h2>\n     </MainLayout>\n"
+                },
+                {
+                    "date": 1766921772621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import MainLayout from \"../layout/MainLayout\";\n \n export default function FundingCalls() {\n   return (\n-    <MainLayout>\n-      <h2>Funding</h2>\n-    </MainLayout>\n+    <div>\n+      <h2 className=\"fw-bold\">Events</h2>\n+      <p>Events listing will appear here.</p>\n+    </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1766921778761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export default function FundingCalls() {\n   return (\n     <div>\n-      <h2 className=\"fw-bold\">Events</h2>\n+      <h2 className=\"fw-bold\">Funding</h2>\n       <p>Events listing will appear here.</p>\n     </div>\n   );\n }\n"
+                }
+            ],
+            "date": 1766863113516,
+            "name": "Commit-0",
+            "content": "import MainLayout from \"../layout/MainLayout\";\n\nexport default function PageName() {\n  return (\n    <MainLayout>\n      <h2>PageName</h2>\n    </MainLayout>\n  );\n}\n"
+        }
+    ]
+}

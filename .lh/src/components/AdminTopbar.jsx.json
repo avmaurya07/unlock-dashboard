@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/AdminTopbar.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1766938728796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1766938728796,
+            "name": "Commit-0",
+            "content": "export default function AdminTopbar({ onToggleSidebar }) {\n  return (\n    <div className=\"ventic-topbar\">\n      <button className=\"btn btn-light border\" onClick={onToggleSidebar}>\n        <i className=\"bi bi-list\" />\n      </button>\n\n      <div className=\"ventic-topbar__right\">\n        <button className=\"btn btn-light border position-relative\">\n          <i className=\"bi bi-bell\" />\n          <span className=\"badge bg-danger position-absolute top-0 start-100 translate-middle\">\n            3\n          </span>\n        </button>\n\n        <div className=\"dropdown\">\n          <button\n            className=\"btn btn-light border dropdown-toggle d-flex align-items-center gap-2\"\n            data-bs-toggle=\"dropdown\"\n          >\n            <img\n              src=\"https://i.pravatar.cc/40\"\n              alt=\"profile\"\n              className=\"rounded-circle\"\n              width=\"28\"\n              height=\"28\"\n            />\n            <span className=\"d-none d-md-inline\">Admin</span>\n          </button>\n\n          <ul className=\"dropdown-menu dropdown-menu-end\">\n            <li><button className=\"dropdown-item\">Profile</button></li>\n            <li><hr className=\"dropdown-divider\" /></li>\n            <li>\n              <button\n                className=\"dropdown-item text-danger\"\n                onClick={() => {\n                  localStorage.removeItem(\"token\");\n                  window.location.href = \"/\";\n                }}\n              >\n                Logout\n              </button>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  );\n}\n"
+        }
+    ]
+}

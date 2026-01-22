@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/UserDashboard.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1766174996546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1766174996546,
+            "name": "Commit-0",
+            "content": "import ProtectedRoute from \"../components/ProtectedRoute\";\n\nexport default function UserDashboard() {\n  return (\n    <ProtectedRoute>\n      <h1>User Dashboard</h1>\n    </ProtectedRoute>\n  );\n}\n"
+        }
+    ]
+}

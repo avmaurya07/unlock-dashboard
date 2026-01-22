@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/api/adminDashboard.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1766938488788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1766938488788,
+            "name": "Commit-0",
+            "content": "import api from \"./client\";\n\nexport const getAdminSummary = (params) =>\n  api.get(\"/api/admin/dashboard/summary\", { params });\n\nexport const getListingsByType = (params) =>\n  api.get(\"/api/admin/dashboard/listings-by-type\", { params });\n\nexport const getListingsTrends = (params) =>\n  api.get(\"/api/admin/dashboard/listings-trends\", { params });\n"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/main.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1766429178731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1766862726894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import './index.css'\n import App from './App.jsx'\n import 'bootstrap/dist/css/bootstrap.min.css';\n import 'react-toastify/dist/ReactToastify.css';\n+import \"bootstrap-icons/font/bootstrap-icons.css\";\n \n createRoot(document.getElementById('root')).render(\n   <StrictMode>\n     <App />\n"
+                },
+                {
+                    "date": 1766922287539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n import App from './App.jsx'\n import 'bootstrap/dist/css/bootstrap.min.css';\n import 'react-toastify/dist/ReactToastify.css';\n import \"bootstrap-icons/font/bootstrap-icons.css\";\n+import \"./styles/theme.css\";\n \n+\n createRoot(document.getElementById('root')).render(\n   <StrictMode>\n     <App />\n   </StrictMode>,\n"
+                },
+                {
+                    "date": 1766938753928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n import 'bootstrap/dist/css/bootstrap.min.css';\n import 'react-toastify/dist/ReactToastify.css';\n import \"bootstrap-icons/font/bootstrap-icons.css\";\n import \"./styles/theme.css\";\n+import \"bootstrap/dist/js/bootstrap.bundle.min.js\";\n \n-\n createRoot(document.getElementById('root')).render(\n   <StrictMode>\n     <App />\n   </StrictMode>,\n"
+                }
+            ],
+            "date": 1766429178731,
+            "name": "Commit-0",
+            "content": "import { StrictMode } from 'react'\nimport { createRoot } from 'react-dom/client'\nimport './index.css'\nimport App from './App.jsx'\nimport 'bootstrap/dist/css/bootstrap.min.css';\nimport 'react-toastify/dist/ReactToastify.css';\n\ncreateRoot(document.getElementById('root')).render(\n  <StrictMode>\n    <App />\n  </StrictMode>,\n)\n"
+        }
+    ]
+}
