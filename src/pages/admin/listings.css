@@ -1,0 +1,34 @@
+/* Modern listing table styles */
+.listings-wrapper { padding: 0; }
+.table-modern { border-collapse: separate; border-spacing: 0; width: 100%; }
+.table-modern thead th {
+  background: linear-gradient(90deg, #f8fafc, #ffffff);
+  color: #0f172a;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  border-bottom: none;
+  padding: 0.9rem 1rem;
+}
+.table-modern tbody td { padding: 0.9rem 1rem; vertical-align: middle; border-top: none; }
+.table-modern tbody tr { transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease; }
+.table-modern tbody tr:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(15,23,42,0.06); background: #ffffff; }
+
+.listing-title { font-weight: 700; color: #0f172a; }
+.listing-desc { color: #6b7280; font-size: 0.94rem; max-width: 420px; }
+
+.badge-modern { display:inline-block; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#1e3a8a; font-weight:600; }
+.badge-status-pending { background: rgba(255, 223, 128, 0.25); color: #92400e; }
+.badge-status-approved { background: rgba(16,185,129,0.12); color: #065f46; }
+.badge-status-rejected { background: rgba(255,99,132,0.08); color: #9b2c2c; }
+
+.table-modern .actions { display:flex; gap:0.5rem; justify-content:flex-end; }
+.table-modern .btn-sm { border-radius: 8px; padding: 0.35rem 0.6rem; }
+
+@media (max-width: 760px) {
+  .table-modern thead { display:none; }
+  .table-modern tbody td { display:block; width:100%; box-sizing:border-box; }
+  .table-modern tbody tr { margin-bottom: 0.75rem; display:block; border-radius:10px; overflow:hidden; box-shadow: 0 8px 20px rgba(15,23,42,0.04); }
+  .table-modern tbody td .listing-desc { max-width: 100%; }
+}

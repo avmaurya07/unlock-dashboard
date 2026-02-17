@@ -10,6 +10,7 @@ import {
 
 import Pagination from "../../components/Pagination";
 import ListingReviewModal from "../../components/ListingReviewModal";
+import "./listings.css";
 
 export default function PendingListings() {
   const [loading, setLoading] = useState(true);
@@ -181,8 +182,8 @@ export default function PendingListings() {
           </div>
         </div>
 
-        <div className="table-responsive">
-          <table className="table align-middle mb-0">
+        <div className="table-responsive listings-wrapper">
+          <table className="table align-middle mb-0 table-modern">
             <thead className="table-light">
               <tr>
                 <th style={{ minWidth: 260 }}>Title</th>
@@ -213,9 +214,7 @@ export default function PendingListings() {
                     </td>
 
                     <td>
-                      <span className="badge bg-secondary">
-                        {r?.type?.name || "—"}
-                      </span>
+                      <span className="badge-modern">{r?.type?.name || "—"}</span>
                     </td>
 
                     <td>

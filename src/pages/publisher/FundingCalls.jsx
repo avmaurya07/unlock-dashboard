@@ -6,6 +6,7 @@ export default function FundingCalls() {
 import { useEffect, useMemo, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
+import api from "../../api/client";
 import {
   createFundingCall,
   deleteFundingCall,
@@ -42,6 +43,8 @@ function FundingCallsCrud() {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState("create"); // create | edit
   const [editing, setEditing] = useState(null);
+  const [publisher, setPublisher] = useState(null);
+  const [hasAccess, setHasAccess] = useState(false);
 
   const initialForm = useMemo(
     () => ({
@@ -107,6 +110,19 @@ function FundingCallsCrud() {
 
   useEffect(() => {
     loadMeta();
+    (async () => {
+      try {
+        const res = await api.get("/api/publisher/me");
+        const pub = res.data?.publisher || null;
+        setPublisher(pub);
+        const daysLeft = pub?.subscriptionExpiry ? (new Date(pub.subscriptionExpiry) - new Date()) / (1000*60*60*24) : 0;
+        setHasAccess(pub?.subscriptionStatus === "active" && daysLeft > 0);
+      } catch (e) {
+        // ignore — anonymous/unauth users will not have access
+        setPublisher(null);
+        setHasAccess(false);
+      }
+    })();
   }, []);
 
   useEffect(() => {
@@ -304,10 +320,20 @@ function FundingCallsCrud() {
           <div className="text-muted">Publish funding challenges (pending admin approval)</div>
         </div>
 
-        <button className="btn btn-primary" onClick={openCreate}>
-          <i className="bi bi-plus-lg me-2" />
-          Add Funding Call
-        </button>
+        {hasAccess ? (
+          <button className="btn btn-primary" onClick={openCreate}>
+            <i className="bi bi-plus-lg me-2" />
+            Add Funding Call
+          </button>
+        ) : (
+          <button
+            className="btn btn-outline-secondary"
+            onClick={() => toast.info("Please purchase a subscription to create funding calls")}
+          >
+            <i className="bi bi-lock-fill me-2" />
+            Create (Subscribe)
+          </button>
+        )}
       </div>
 
       {/* Filters */}
@@ -395,13 +421,31 @@ function FundingCallsCrud() {
                       <td className="small text-muted">{r.submissionDeadline ? new Date(r.submissionDeadline).toLocaleDateString() : "—"}</td>
                       <td className="text-end">
                         <div className="d-flex gap-2 justify-content-end">
-                          <button className="btn btn-sm btn-outline-secondary" onClick={() => openEdit(r)}>
+                          <button
+                            className="btn btn-sm btn-outline-secondary"
+                            onClick={() => {
+                              if (!hasAccess) return toast.info("Subscribe to edit this content");
+                              openEdit(r);
+                            }}
+                          >
                             Edit
                           </button>
-                          <button className="btn btn-sm btn-outline-dark" onClick={() => onToggleActive(r)}>
+                          <button
+                            className="btn btn-sm btn-outline-dark"
+                            onClick={() => {
+                              if (!hasAccess) return toast.info("Subscribe to change active status");
+                              onToggleActive(r);
+                            }}
+                          >
                             {r.isActive ? "Deactivate" : "Activate"}
                           </button>
-                          <button className="btn btn-sm btn-outline-danger" onClick={() => onDelete(r)}>
+                          <button
+                            className="btn btn-sm btn-outline-danger"
+                            onClick={() => {
+                              if (!hasAccess) return toast.info("Subscribe to delete listings");
+                              onDelete(r);
+                            }}
+                          >
                             Delete
                           </button>
                         </div>

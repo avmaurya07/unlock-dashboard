@@ -10,6 +10,7 @@ import {
 
 import Pagination from "../../components/Pagination";
 import ListingReviewModal from "../../components/ListingReviewModal";
+import "./listings.css";
 
 export default function AllListings() {
   const [loading, setLoading] = useState(true);
@@ -131,10 +132,10 @@ export default function AllListings() {
   };
 
   const badgeForStatus = (status) => {
-    if (status === "pending") return "bg-warning text-dark";
-    if (status === "approved") return "bg-success";
-    if (status === "rejected") return "bg-danger";
-    return "bg-secondary";
+    if (status === "pending") return "badge-modern badge-status-pending";
+    if (status === "approved") return "badge-modern badge-status-approved";
+    if (status === "rejected") return "badge-modern badge-status-rejected";
+    return "badge-modern";
   };
 
   return (
@@ -223,8 +224,8 @@ export default function AllListings() {
           </div>
         </div>
 
-        <div className="table-responsive">
-          <table className="table align-middle mb-0">
+        <div className="table-responsive listings-wrapper">
+          <table className="table align-middle mb-0 table-modern">
             <thead className="table-light">
               <tr>
                 <th style={{ minWidth: 260 }}>Title</th>
@@ -252,7 +253,7 @@ export default function AllListings() {
                     </td>
 
                     <td>
-                      <span className="badge bg-secondary">{r?.type?.name || "—"}</span>
+                      <span className="badge-modern">{r?.type?.name || "—"}</span>
                     </td>
 
                     <td>

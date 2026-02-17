@@ -30,6 +30,16 @@ export default function Profile() {
     ? new Date(profile.subscriptionExpiry).toLocaleDateString()
     : "Not set";
 
+  const computeDaysLeft = () => {
+    if (!profile || !profile.subscriptionExpiry) return 0;
+    const expiry = new Date(profile.subscriptionExpiry);
+    const now = new Date();
+    const diff = expiry - now;
+    return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+  };
+
+  const daysLeft = computeDaysLeft();
+
   return (
     <div className="container-fluid">
       <h2 className="mb-3">My Profile</h2>
@@ -107,6 +117,10 @@ export default function Profile() {
               <div className="d-flex justify-content-between">
                 <span className="text-muted">Expiry</span>
                 <span className="fw-semibold">{subscriptionExpiry}</span>
+              </div>
+              <div className="d-flex justify-content-between mt-2">
+                <span className="text-muted">Days left</span>
+                <span className="fw-semibold">{daysLeft}</span>
               </div>
             </div>
           </div>

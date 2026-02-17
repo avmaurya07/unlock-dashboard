@@ -56,7 +56,9 @@ export default function Events() {
         const res = await api.get("/api/public/event-categories");
         setCategories(res.data?.categories || []);
       } catch (err) {
-        toast.error(err?.response?.data?.message || "Failed to load event categories");
+        toast.error(
+          err?.response?.data?.message || "Failed to load event categories",
+        );
       }
     })();
   }, []);
@@ -72,8 +74,12 @@ export default function Events() {
     setForm({
       ...defaultForm,
       ...ev,
-      targetAudience: Array.isArray(ev.targetAudience) ? ev.targetAudience.join(", ") : ev.targetAudience || "",
-      keyTopics: Array.isArray(ev.keyTopics) ? ev.keyTopics.join(", ") : ev.keyTopics || "",
+      targetAudience: Array.isArray(ev.targetAudience)
+        ? ev.targetAudience.join(", ")
+        : ev.targetAudience || "",
+      keyTopics: Array.isArray(ev.keyTopics)
+        ? ev.keyTopics.join(", ")
+        : ev.keyTopics || "",
       eligibility: ev.eligibility || "",
       applicationProcess: ev.applicationProcess || "",
       eventDescription: ev.eventDescription || "",
@@ -93,7 +99,8 @@ export default function Events() {
   const validate = () => {
     if (!form.title.trim()) return "Event Name is required";
     if (!form.eventCategory) return "Event Category is required";
-    if (!form.startDateTime || !form.endDateTime) return "Start/End date-time required";
+    if (!form.startDateTime || !form.endDateTime)
+      return "Start/End date-time required";
     if (!form.workEmail) return "Work Email is required";
     return null;
   };
@@ -106,9 +113,15 @@ export default function Events() {
       setSaving(true);
       const payload = {
         ...form,
-        targetAudience: form.targetAudience.split(",").map((s) => s.trim()).filter(Boolean),
-        keyTopics: form.keyTopics.split(",").map((s) => s.trim()).filter(Boolean),
-        banner: mainImage
+        targetAudience: form.targetAudience
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean),
+        keyTopics: form.keyTopics
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean),
+        banner: mainImage,
       };
       if (editId) {
         await api.patch(`/api/publisher/dashboard/events/${editId}`, payload);
@@ -170,7 +183,9 @@ export default function Events() {
       <div className="d-flex justify-content-between align-items-center mb-3">
         <div>
           <h2 className="mb-0">Events</h2>
-          <div className="text-muted">Create and manage your events (pending admin approval)</div>
+          <div className="text-muted">
+            Create and manage your events (pending admin approval)
+          </div>
         </div>
         <button className="btn btn-primary" onClick={openModal}>
           <i className="bi bi-plus-lg me-2" />
@@ -209,7 +224,12 @@ export default function Events() {
                           <img
                             src={ev.mainImage.url}
                             alt="banner"
-                            style={{ width: 60, height: 40, objectFit: "cover", borderRadius: 6 }}
+                            style={{
+                              width: 60,
+                              height: 40,
+                              objectFit: "cover",
+                              borderRadius: 6,
+                            }}
                           />
                         ) : (
                           <span className="text-muted small">No image</span>
@@ -217,16 +237,36 @@ export default function Events() {
                       </td>
                       <td>{ev.eventCategory || "-"}</td>
                       <td>
-                        <span className={`badge ${ev.status === "approved" ? "bg-success" : ev.status === "rejected" ? "bg-danger" : "bg-warning"}`}>
+                        <span
+                          className={`badge ${ev.status === "approved" ? "bg-success" : ev.status === "rejected" ? "bg-danger" : "bg-warning"}`}
+                        >
                           {ev.status}
                         </span>
                       </td>
-                      <td>{ev.startDateTime ? new Date(ev.startDateTime).toLocaleString() : "-"}</td>
-                      <td>{ev.endDateTime ? new Date(ev.endDateTime).toLocaleString() : "-"}</td>
+                      <td>
+                        {ev.startDateTime
+                          ? new Date(ev.startDateTime).toLocaleString()
+                          : "-"}
+                      </td>
+                      <td>
+                        {ev.endDateTime
+                          ? new Date(ev.endDateTime).toLocaleString()
+                          : "-"}
+                      </td>
                       <td className="text-end">
                         <div className="btn-group btn-group-sm">
-                          <button className="btn btn-outline-primary" onClick={() => openEdit(ev)}>Edit</button>
-                          <button className="btn btn-outline-danger" onClick={() => deleteEvent(ev._id)}>Delete</button>
+                          <button
+                            className="btn btn-outline-primary"
+                            onClick={() => openEdit(ev)}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            className="btn btn-outline-danger"
+                            onClick={() => deleteEvent(ev._id)}
+                          >
+                            Delete
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -251,15 +291,27 @@ export default function Events() {
                 <div className="row g-3">
                   <div className="col-12">
                     <label className="form-label">Event Name / Title *</label>
-                    <input className="form-control" name="title" value={form.title} onChange={handleChange} />
+                    <input
+                      className="form-control"
+                      name="title"
+                      value={form.title}
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="col-md-6">
                     <label className="form-label">Event Category *</label>
-                    <select className="form-select" name="eventCategory" value={form.eventCategory} onChange={handleChange}>
+                    <select
+                      className="form-select"
+                      name="eventCategory"
+                      value={form.eventCategory}
+                      onChange={handleChange}
+                    >
                       <option value="">Select</option>
                       {categories.map((c) => (
-                        <option key={c._id || c.name} value={c.name}>{c.name}</option>
+                        <option key={c._id || c.name} value={c.name}>
+                          {c.name}
+                        </option>
                       ))}
                     </select>
                   </div>
@@ -284,38 +336,84 @@ export default function Events() {
 
                   <div className="col-md-6">
                     <label className="form-label">Start Date & Time *</label>
-                    <input type="datetime-local" className="form-control" name="startDateTime" value={form.startDateTime} onChange={handleChange} />
+                    <input
+                      type="datetime-local"
+                      className="form-control"
+                      name="startDateTime"
+                      value={form.startDateTime}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="form-label">End Date & Time *</label>
-                    <input type="datetime-local" className="form-control" name="endDateTime" value={form.endDateTime} onChange={handleChange} />
+                    <input
+                      type="datetime-local"
+                      className="form-control"
+                      name="endDateTime"
+                      value={form.endDateTime}
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="col-md-6">
                     <label className="form-label">Venue Name</label>
-                    <input className="form-control" name="venueName" value={form.venueName} onChange={handleChange} />
+                    <input
+                      className="form-control"
+                      name="venueName"
+                      value={form.venueName}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="form-label">Full Address</label>
-                    <textarea className="form-control" rows="2" name="fullAddress" value={form.fullAddress} onChange={handleChange} />
+                    <textarea
+                      className="form-control"
+                      rows="2"
+                      name="fullAddress"
+                      value={form.fullAddress}
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="col-md-6">
                     <label className="form-label">Organization Name</label>
-                    <input className="form-control" name="organizationName" value={form.organizationName} onChange={handleChange} />
+                    <input
+                      className="form-control"
+                      name="organizationName"
+                      value={form.organizationName}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-6">
-                    <label className="form-label">Organizer Contact Person</label>
-                    <input className="form-control" name="organizerContactPerson" value={form.organizerContactPerson} onChange={handleChange} />
+                    <label className="form-label">
+                      Organizer Contact Person
+                    </label>
+                    <input
+                      className="form-control"
+                      name="organizerContactPerson"
+                      value={form.organizerContactPerson}
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="col-md-6">
                     <label className="form-label">Work Email *</label>
-                    <input type="email" className="form-control" name="workEmail" value={form.workEmail} onChange={handleChange} />
+                    <input
+                      type="email"
+                      className="form-control"
+                      name="workEmail"
+                      value={form.workEmail}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-6">
                     <label className="form-label">Phone Number</label>
-                    <input className="form-control" name="phoneNumber" value={form.phoneNumber} onChange={handleChange} />
+                    <input
+                      className="form-control"
+                      name="phoneNumber"
+                      value={form.phoneNumber}
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="col-12">
@@ -329,17 +427,25 @@ export default function Events() {
                         disabled={uploadingImage}
                       />
                       {mainImage?.url && (
-                        <img src={mainImage.url} alt="banner" style={{ width: 70, height: 70, objectFit: "cover" }} />
+                        <img
+                          src={mainImage.url}
+                          alt="banner"
+                          style={{ width: 70, height: 70, objectFit: "cover" }}
+                        />
                       )}
                     </div>
-                    <div className="text-muted small mt-1">Uploads go to Cloudinary via backend.</div>
+                    <div className="text-muted small mt-1">
+                      Uploads go to Cloudinary via backend.
+                    </div>
                   </div>
 
                   <div className="col-12">
                     <label className="form-label">About</label>
                     <RichTextEditor
                       value={form.eventDescription}
-                      onChange={(val) => setForm((p) => ({ ...p, eventDescription: val }))}
+                      onChange={(val) =>
+                        setForm((p) => ({ ...p, eventDescription: val }))
+                      }
                       placeholder="Describe the event"
                     />
                   </div>
@@ -348,7 +454,9 @@ export default function Events() {
                     <label className="form-label">Eligibility</label>
                     <RichTextEditor
                       value={form.eligibility}
-                      onChange={(val) => setForm((p) => ({ ...p, eligibility: val }))}
+                      onChange={(val) =>
+                        setForm((p) => ({ ...p, eligibility: val }))
+                      }
                       placeholder="Who can apply / attend"
                     />
                   </div>
@@ -357,50 +465,96 @@ export default function Events() {
                     <label className="form-label">Application Process</label>
                     <RichTextEditor
                       value={form.applicationProcess}
-                      onChange={(val) => setForm((p) => ({ ...p, applicationProcess: val }))}
+                      onChange={(val) =>
+                        setForm((p) => ({ ...p, applicationProcess: val }))
+                      }
                       placeholder="How to apply/register"
                     />
                   </div>
 
                   <div className="col-md-6">
-                    <label className="form-label">Target Audience (comma separated)</label>
-                    <input className="form-control" name="targetAudience" value={form.targetAudience} onChange={handleChange} />
+                    <label className="form-label">
+                      Target Audience (comma separated)
+                    </label>
+                    <input
+                      className="form-control"
+                      name="targetAudience"
+                      value={form.targetAudience}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="col-md-6">
-                    <label className="form-label">Key Topics (comma separated)</label>
-                    <input className="form-control" name="keyTopics" value={form.keyTopics} onChange={handleChange} />
+                    <label className="form-label">
+                      Key Topics (comma separated)
+                    </label>
+                    <input
+                      className="form-control"
+                      name="keyTopics"
+                      value={form.keyTopics}
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="col-md-6">
                     <label className="form-label">Registration Type</label>
-                    <select className="form-select" name="registrationType" value={form.registrationType} onChange={handleChange}>
+                    <select
+                      className="form-select"
+                      name="registrationType"
+                      value={form.registrationType}
+                      onChange={handleChange}
+                    >
                       <option value="">Select</option>
-                      {registrationTypes.map((r) => <option key={r} value={r}>{r}</option>)}
+                      {registrationTypes.map((r) => (
+                        <option key={r} value={r}>
+                          {r}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div className="col-md-6">
                     <label className="form-label">Registration Deadline</label>
-                    <input type="date" className="form-control" name="registrationDeadline" value={form.registrationDeadline} onChange={handleChange} />
+                    <input
+                      type="date"
+                      className="form-control"
+                      name="registrationDeadline"
+                      value={form.registrationDeadline}
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <div className="col-12">
-                    <label className="form-label">Registration Link / URL</label>
-                    <input type="url" className="form-control" name="registrationUrl" value={form.registrationUrl} onChange={handleChange} />
+                    <label className="form-label">
+                      Registration Link / URL
+                    </label>
+                    <input
+                      type="url"
+                      className="form-control"
+                      name="registrationUrl"
+                      value={form.registrationUrl}
+                      onChange={handleChange}
+                    />
                   </div>
                 </div>
               </div>
 
               <div className="modal-footer">
-                <button className="btn btn-outline-secondary" onClick={closeModal} disabled={saving}>
+                <button
+                  className="btn btn-outline-secondary"
+                  onClick={closeModal}
+                  disabled={saving}
+                >
                   Cancel
                 </button>
-                <button className="btn btn-primary" onClick={saveEvent} disabled={saving}>
+                <button
+                  className="btn btn-primary"
+                  onClick={saveEvent}
+                  disabled={saving}
+                >
                   {saving ? "Saving..." : editId ? "Update" : "Save"}
                 </button>
               </div>
             </div>
           </div>
-          <div className="modal-backdrop show" onClick={closeModal} />
         </div>
       )}
 

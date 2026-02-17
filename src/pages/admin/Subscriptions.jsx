@@ -14,6 +14,7 @@ export default function Subscriptions() {
   const [plan3, setPlan3] = useState("");
   const [plan6, setPlan6] = useState("");
   const [plan9, setPlan9] = useState("");
+  const [plan12, setPlan12] = useState("");
 
   const [yearlyFee, setYearlyFee] = useState("");
 
@@ -33,6 +34,7 @@ export default function Subscriptions() {
         plan3: plans["3"] ?? plans[3] ?? "",
         plan6: plans["6"] ?? plans[6] ?? "",
         plan9: plans["9"] ?? plans[9] ?? "",
+        plan12: plans["12"] ?? plans[12] ?? "",
         yearlyFee: cfg.serviceListingYearlyFee ?? "",
       };
 
@@ -40,6 +42,7 @@ export default function Subscriptions() {
       setPlan3(String(next.plan3));
       setPlan6(String(next.plan6));
       setPlan9(String(next.plan9));
+      setPlan12(String(next.plan12));
       setYearlyFee(String(next.yearlyFee));
 
       setOriginal(next);
@@ -68,20 +71,22 @@ export default function Subscriptions() {
     const p3 = validateNumber(plan3, "3-month price");
     const p6 = validateNumber(plan6, "6-month price");
     const p9 = validateNumber(plan9, "9-month price");
+    const p12 = validateNumber(plan12, "12-month price");
     const yf = validateNumber(yearlyFee, "Yearly service listing fee");
 
-    if (p3 === null || p6 === null || p9 === null || yf === null) return;
+    if (p3 === null || p6 === null || p9 === null || p12 === null || yf === null) return;
 
     // brutal truth: prevent nonsense pricing
     if (p6 < p3) return toast.error("6-month price should be >= 3-month price");
     if (p9 < p6) return toast.error("9-month price should be >= 6-month price");
+    if (p12 < p9) return toast.error("12-month price should be >= 9-month price");
 
     try {
       setSaving(true);
 
       const payload = {
         currency,
-        plans: { 3: p3, 6: p6, 9: p9 },
+        plans: { 3: p3, 6: p6, 9: p9, 12: p12 },
         serviceListingYearlyFee: yf,
       };
 
@@ -93,6 +98,7 @@ export default function Subscriptions() {
         plan3: String(p3),
         plan6: String(p6),
         plan9: String(p9),
+        plan12: String(p12),
         yearlyFee: String(yf),
       });
     } catch (err) {
@@ -108,6 +114,7 @@ export default function Subscriptions() {
     setPlan3(String(original.plan3));
     setPlan6(String(original.plan6));
     setPlan9(String(original.plan9));
+    setPlan12(String(original.plan12));
     setYearlyFee(String(original.yearlyFee));
     toast.info("Reset to saved values");
   };
@@ -118,6 +125,7 @@ export default function Subscriptions() {
       String(plan3) !== String(original.plan3) ||
       String(plan6) !== String(original.plan6) ||
       String(plan9) !== String(original.plan9) ||
+      String(plan12) !== String(original.plan12) ||
       String(yearlyFee) !== String(original.yearlyFee));
 
   return (
@@ -126,7 +134,7 @@ export default function Subscriptions() {
         <div>
           <h3 className="fw-bold mb-1">Subscriptions</h3>
           <div className="text-muted small">
-            Manage plan pricing (3/6/9 months) and yearly service listing fee
+            Manage plan pricing (3/6/9/12 months) and yearly service listing fee
           </div>
         </div>
 
@@ -218,11 +226,26 @@ export default function Subscriptions() {
                   </div>
                 </div>
 
+                <div className="col-12 col-md-4">
+                  <label className="form-label small text-muted">12 Months Price</label>
+                  <div className="input-group">
+                    <span className="input-group-text">{currency}</span>
+                    <input
+                      type="number"
+                      min="0"
+                      className="form-control"
+                      value={plan12}
+                      onChange={(e) => setPlan12(e.target.value)}
+                      placeholder="e.g. 3499"
+                    />
+                  </div>
+                </div>
+
                 <div className="col-12">
                   <div className="alert alert-info mb-0">
                     <div className="fw-semibold">Rule (recommended)</div>
                     <div className="small">
-                      Keep 6-month ≥ 3-month and 9-month ≥ 6-month.
+                      Keep 6-month ≥ 3-month, 9-month ≥ 6-month and 12-month ≥ 9-month.
                       Otherwise users will pick the cheaper longer plan.
                     </div>
                   </div>
